@@ -1,13 +1,13 @@
-<form action="/companies" method="post">
+<%= form_with :model => @company do |form| %>
   <p>
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name">
+    <%= form.label "name", "Company Name" %>
+    <%= form.text_field "name" %>
   </p>
   <p>
-    <label for="city">City</label>
-    <input type="text" name="city" id="city">
-    <label for="state">State</label>
-    <input type="text" name="state" id="state">
+    <%= form.label "city" %>
+    <%= form.text_field "city" %>
+    <%= form.label "state" %>
+    <%= form.text_field "state" %>
   </p>
-  <button>Submit</button>
-</form>
+  <%= form.submit %>
+<% end %>

@@ -1,1 +1,18 @@
 <%# TODO: company details page %>
+<h1><%= @company["name"]%></h1>
+
+<h2><%= @company["city"]%>, <%= @company["state"]%>  
+
+<p>
+    <a href="/companies">Back to all companies</a>
+</p>
+
+<h3>Contacts</h3>
+
+<ul>
+    <% for contact in @contacts %>
+    <li><%= contact["first_name"]%> <%= contact["last_name"] %></li>
+    <% end %>
+</ul>
+
+<p><a href="/contacts/new?company_id=<%= @company["id"] %>">Create a new contact for <%= @company["name"]%></a>
